@@ -1,3 +1,20 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  .tower-container {
+    @apply absolute;
+
+    .tower-pin {
+      @apply flex h-20 w-20 flex-col justify-center;
+      @apply rounded-full border-4 border-red-900;
+      @apply bg-gray-800 text-white;
+      @apply transition-opacity duration-300;
+    }
+
+    .tower-line {
+      @apply border border-red-900;
+    }
+  }
+}
