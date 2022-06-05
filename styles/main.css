@@ -5,11 +5,16 @@
 @layer components {
   .tower-container {
     @apply absolute;
+    @apply transition-opacity duration-300;
 
     .tower-pin {
       @apply flex h-20 w-20 flex-col justify-center;
-      @apply rounded-full border-4 border-red-900;
-      @apply bg-gray-800 text-white;
+      @apply rounded-full border-4;
+      @apply text-white;
+      @apply overflow-hidden;
+    }
+
+    img {
       @apply transition-opacity duration-300;
     }
 

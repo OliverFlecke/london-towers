@@ -7,7 +7,9 @@ const ratio = 189 / 79;
 
 const Towers: React.FC = () => {
   const windowSize = useWindowSize();
-  if (windowSize.width === undefined) return null;
+  if (windowSize.width === undefined) {
+    return null;
+  }
 
   const height = windowSize.width / ratio;
 
