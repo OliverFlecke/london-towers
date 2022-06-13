@@ -4,7 +4,7 @@ import LondonTowers from "../src/components/LondonTowers";
 
 const Home: NextPage = () => {
   return (
-    <main className="relative min-h-screen bg-gray-100 dark:bg-gray-900">
+    <main className="relative min-h-screen bg-sky-100 dark:bg-sky-800">
       <Head>
         <title>London Towers</title>
         <meta name="description" content="" />

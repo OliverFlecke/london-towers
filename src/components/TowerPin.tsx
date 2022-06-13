@@ -2,7 +2,7 @@ import { Tower } from "./Tower";
 import Image from "next/image";
 
 const TowerPin: React.FC<Tower> = (props) => {
-  const { name, position, link, lineHeight, height } = props;
+  const { position, lineHeight, height } = props;
 
   return (
     <div
@@ -13,7 +13,7 @@ const TowerPin: React.FC<Tower> = (props) => {
         transform: "translate(-50%, 0)",
       }}
     >
-      <TowerLine height={lineHeight} />
+      <TowerLine height={lineHeight ?? 30} />
       <TowerPinContent {...props} />
     </div>
   );
@@ -32,22 +32,26 @@ const TowerLine: React.FC<{ height: number }> = ({ height }) => (
   ></div>
 );
 
-const TowerPinContent: React.FC<Tower> = ({ link, name, image }) => (
-  <a
-    href={link}
-    className="tower-pin border-red-900 border-opacity-50 group-hover:border-opacity-100"
-  >
-    <span className="absolute z-10 text-center leading-tight opacity-0 group-hover:opacity-100">
-      {name}
-    </span>
-    {image && (
-      <Image
-        className="opacity-100 group-hover:opacity-100"
-        src={`/images/buildings/${image}`}
-        alt={name}
-        width={100}
-        height={100}
-      />
-    )}
-  </a>
-);
+const TowerPinContent: React.FC<Tower> = ({ links, name, image }) => {
+  const link = links.length === 0 ? "" : links[0];
+
+  return (
+    <a
+      href={link}
+      className="tower-pin border-red-900 border-opacity-50 group-hover:border-opacity-100"
+    >
+      <span className="absolute z-10 max-w-full break-words text-center leading-tight opacity-0 group-hover:opacity-100">
+        {name}
+      </span>
+      {image && (
+        <Image
+          className="opacity-100 group-hover:opacity-100"
+          src={`/images/buildings/${image}`}
+          alt={name}
+          width={100}
+          height={100}
+        />
+      )}
+    </a>
+  );
+};
