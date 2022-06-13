@@ -77,4 +77,12 @@ export const towers: Tower[] = [
       "https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral",
     ],
   },
+  {
+    name: "One Blackfriars",
+    image: "one-blackfriars.jpeg",
+    position: 28,
+    height: 63,
+    lineHeight: 115,
+    links: ["https://en.wikipedia.org/wiki/One_Blackfriars"],
+  },
 ];
