@@ -38,7 +38,7 @@ const TowerPinContent: React.FC<Tower> = ({ links, name, image }) => {
   return (
     <a
       href={link}
-      className="tower-pin border-red-900 border-opacity-50 group-hover:border-opacity-100"
+      className="tower-pin relative border-red-900 border-opacity-50 group-hover:border-opacity-100"
     >
       <span className="absolute z-10 max-w-full break-words text-center leading-tight opacity-0 group-hover:opacity-100">
         {name}
