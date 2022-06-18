@@ -1,11 +1,11 @@
 import React from "react";
 import useWindowSize from "../useWindowSize";
-import { towers } from "./Tower";
+import type { Tower } from "./Tower";
 import TowerPin from "./TowerPin";
 
 const ratio = 189 / 79;
 
-const Towers: React.FC = () => {
+const Towers: React.FC<{ towers: Tower[] }> = ({ towers }) => {
   const windowSize = useWindowSize();
   if (windowSize.width === undefined) {
     return null;
