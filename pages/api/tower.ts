@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { towers } from "../../src/components/Tower";
-import TowerRepository from "../../src/towerRepository";
+import TowerRepository from "../../src/TowerRepository";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {

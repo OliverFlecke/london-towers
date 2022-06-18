@@ -1,16 +1,16 @@
 import dynamic from "next/dynamic";
-import React from "react";
-import type { Tower } from "./Tower";
+import React, { useEffect, useState } from "react";
+import { Tower } from "./Tower";
 import Towers from "./Towers";
 import View from "./View";
 
-const LondonTowers: React.FC<{ towers: Tower[] }> = ({ towers }) => {
+const LondonTowers: React.FC = ({}) => {
   return (
     <>
       <View />
 
       <Client>
-        <Towers towers={towers} />
+        <Helper />
       </Client>
     </>
   );
@@ -23,3 +23,14 @@ function Client({ children }: { children: any }) {
 
   return <Dynamic></Dynamic>;
 }
+
+const Helper: React.FC = () => {
+  const [towers, setTowers] = useState<Tower[]>([]);
+  useEffect(() => {
+    fetch("/api/towers")
+      .then(async (x) => await x.json())
+      .then(setTowers);
+  }, []);
+
+  return <Towers towers={towers} />;
+};
