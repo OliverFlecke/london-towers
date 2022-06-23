@@ -3,6 +3,7 @@ import { towers } from "../../src/components/Tower";
 import TowerRepository from "../../src/TowerRepository";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log(`Handling request to /api/tower`);
   switch (req.method) {
     case "GET":
       {

@@ -27,7 +27,7 @@ function Client({ children }: { children: any }) {
 const Helper: React.FC = () => {
   const [towers, setTowers] = useState<Tower[]>([]);
   useEffect(() => {
-    fetch("/api/towers")
+    fetch("/api/tower")
       .then(async (x) => await x.json())
       .then(setTowers);
   }, []);
