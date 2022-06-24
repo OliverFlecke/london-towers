@@ -9,8 +9,7 @@
     "prebuild": "yarn postcss styles/main.css -o src/compiled.css -v",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": ""
+    "lint": "next lint"
   },
   "dependencies": {
     "mongodb": "^4.7.0",
