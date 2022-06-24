@@ -2,6 +2,8 @@
 
 A small app to display a few of the iconic landmarks in central London, seen from Canary Wharf.
 
+![Screenshot of the London Towers app](./app-screenshot.png)
+
 Build with React/NextJS, TypeScript, and Tailwindcss, running with a MongoDB backend for storing information about each landmark.
 The service can be build to a Docker image and includes configuration for deployment on [Kubernetes](https://kubernetes.io) (which is a bit overkill, but this shows a relative basic setup on Kubernetes with an app connected to a persisted database).
 
