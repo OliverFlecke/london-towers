@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: towers
+  name: towers
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: towers
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: towers
+    spec:
+      containers:
+        - image: oliverflecke/london-towers:latest
+          imagePullPolicy: Never
+          name: towers
+          resources:
+            limits:
+              memory: 1Gi
+              cpu: "1"
+          env:
+            - name: DB_HOST
+              value: mongo-nodeport-svc
+            - name: DB_NAME
+              value: london
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-creds
+                  key: london_username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-creds
+                  key: london_password
+

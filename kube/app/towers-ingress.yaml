@@ -1,0 +1,10 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: towers-ingress
+spec:
+  defaultBackend:
+    service:
+      name: towers-service
+      port:
+        number: 3000
